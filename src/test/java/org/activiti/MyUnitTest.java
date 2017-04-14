@@ -62,6 +62,8 @@ public class MyUnitTest {
 		taskVariables.put("vacationApproved", "false");
 		taskVariables.put("managerMotivation","We have a tight deadline!");
 		taskService.complete(task.getId(),taskVariables);
+		
+		List<Task> tasks1=taskService.createTaskQuery().processVariableValueEquals("orderId","0815").orderByDueDate().asc().list();
 	}
 
 }
